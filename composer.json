@@ -2,6 +2,7 @@
     "name": "wiidoo/file-manager",
     "description": "File Manager uploaded to laravel",
     "license": "MIT",
+    "type": "library",
     "keywords": ["file", "manager"],
     "authors": [
         {
@@ -14,7 +15,8 @@
     },
     "autoload": {
         "psr-0": {
-            "Wiidoo\\FileManager\\": "src"
+            "Wiidoo\\FileManager\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
