@@ -81,7 +81,6 @@ Herda metodos e propriedades de `Upload`.
 | $mode         | `0777`                | Ajusta permissão dos arquivos e diretórios gerados pela classe.          |
 | $quality      | `80`                  | Qualidade em que a imagem editada será salva.                            |
 | $size         | [array sizes](#sizes) | Listagem de tamanhos de imagem                                           |
-|               |                       |                                                                          |
 
 #### Métodos
 | Método                                             | Descrição                                                                                                                                                                                                                                                                                                |
