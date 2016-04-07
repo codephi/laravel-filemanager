@@ -43,6 +43,7 @@ Tem como foco resumir o trabalho de mover e renomear arquivos carregados a parti
 
 #### Estrutura
 
+##### Propriedades
 |    Propiedade    |           Valor           |                                                                                          Descrição                                                                                          |
 |:----------------:|:-------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 |       $name      |           `null`          | Nome do arquivo                                                                                                                                                                             |
@@ -52,7 +53,7 @@ Tem como foco resumir o trabalho de mover e renomear arquivos carregados a parti
 | $useRelativePath | `true`                    | Usar caminhos relativos no metodo de seleção de diretório `dir()`                                                                                                                           |
 | $forceCreateDir  | `true`                    | Força a criação de diretórios declarados caso eles não existão                                                                                                                              |
 
-
+##### Métodos
 | Método                                             | Descrição                                                                                                   |
 |----------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
 | file($key = null, $default = null)                 | Define o arquivo de entrada.                                                                                |
