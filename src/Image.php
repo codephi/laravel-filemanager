@@ -68,7 +68,7 @@ class Image extends Upload
     {
         parent::__construct($request);
 
-        parent::mergeConfig('filemanager.image');
+        parent::mergeConfig('wiidoo.filemanager.image');
     }
 
     public function __call($name, $arguments)

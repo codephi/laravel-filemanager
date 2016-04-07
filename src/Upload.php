@@ -50,7 +50,7 @@ class Upload extends FluentInterface
     {
         parent::__construct();
 
-        parent::mergeConfig('filemanager.upload');
+        parent::mergeConfig('wiidoo.filemanager.upload');
 
         $this->request = $request;
     }
