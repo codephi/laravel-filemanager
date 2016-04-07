@@ -42,14 +42,15 @@ return [
 Tem como foco resumir o trabalho de mover e renomear arquivos carregados a partir de Illuminate\Http\Request. É usado como base para outras classes dessa biblioteca.
 
 #### Estrutura
- | Propiedade | Valor | Descrição | 
- | :-: | :-: | :- | 
- | **$name** | `null` | Nome do arquivo | 
- | **$sufix** | `' (%number%)'` | Carcteres adicionais concatenados como sufixo do nome caso um arquivo com o mesmo nome já exista. Você pode implementar adicionando a variavel curinga `%number%`, exemplo `' - %number%'`. | 
- | **$overwrite** | `false` | Caso `true` sobrescreve arquivos se eles existirem | 
- | **$basePath** | `storage_path('uploads')` | Diretório de arquivos carregados | 
- | **$useRelativePath** | `true` | Usar caminhos relativos no metodo de seleção de diretório `dir()` | 
- | **$forceCreateDir** | `true` | Força a criação de diretórios declarados caso eles não existão | 
+
+|    Propiedade    |           Valor           |                                                                                          Descrição                                                                                          |
+|:----------------:|:-------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|       $name      |           `null`          | Nome do arquivo                                                                                                                                                                             |
+|      $sufix      |      `' (%number%)'`      | Carcteres adicionais concatenados como sufixo do nome caso um arquivo com o mesmo nome já exista. Você pode implementar adicionando a variavel curinga `%number%`, exemplo `' - %number%'`. |
+|    $overwrite    |          `false`          | Caso `true` sobrescreve arquivos se eles existirem                                                                                                                                          |
+| $basePath        | `storage_path('uploads')` | `storage_path('uploads')`|Diretório de arquivos carregados                                                                                                                                  |
+| $useRelativePath | `true`                    | Usar caminhos relativos no metodo de seleção de diretório `dir()`                                                                                                                           |
+| $forceCreateDir  | `true`                    | Força a criação de diretórios declarados caso eles não existão                                                                                                                              |
 
 ### Wiidoo\FileManager\Image
 Manipula a imagem facilitando a aplicação de filtros, redimensionamentos e multiplos salvamentos
@@ -58,12 +59,12 @@ Manipula a imagem facilitando a aplicação de filtros, redimensionamentos e mul
 
 Herdas metodos e propriedades de `Upload`.
 
- | Propiedade | Valor | Descrição | 
- | :-: | :-: | :- | 
- | **$saveOriginal** | `null` | Se `true` gera salva o arquivo original no diretório declado em `dir()` | 
- | **$mode** | `0777` | Ajusta permissão dos arquivos e diretórios gerados pela classe | 
- | **$quality** | `80` | Qualidade em que a imagem editada será salva. | 
- | **$size** | [array sizes](#sizes) | Listagem de tamanhos de imagem | 
+Propiedade | Valor | Descrição 
+:-: | :-: | :-
+**$saveOriginal** | `null` | Se `true` gera salva o arquivo original no diretório declado em `dir()`
+**$mode** | `0777` | Ajusta permissão dos arquivos e diretórios gerados pela classe 
+**$quality** | `80` | Qualidade em que a imagem editada será salva. 
+**$size** | [array sizes](#sizes) | Listagem de tamanhos de imagem 
 
 
  
