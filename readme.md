@@ -52,12 +52,26 @@ Tem como foco resumir o trabalho de mover e renomear arquivos carregados a parti
 | $useRelativePath | `true`                    | Usar caminhos relativos no metodo de seleção de diretório `dir()`                                                                                                                           |
 | $forceCreateDir  | `true`                    | Força a criação de diretórios declarados caso eles não existão                                                                                                                              |
 
+
+| Método                                             | Descrição                                                                                                   |
+|----------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| file($key = null, $default = null)                 | Define o arquivo de entrada.                                                                                |
+| dir($directory, $forceCreate = true)               | Define o diretório do arquivo em `$directory` e força a criação do mesmo caso não exista em `$forceCreate`. |
+| path($directory, $forceCreate = true)              | Um link para `dir()`.                                                                                       |
+| name($name, $ext = true)                           | Define o nome do arquivo quando salvo em `$name`. $ext permite herdar a extenssão do arquivo carregado.     |
+| unique()                                           | O mesmo que $overwrite = true;                                                                              |
+| overwrite()                                        | O mesmo que $overwrite = true;                                                                              |
+| prepare($callback)                                 | Executa uma função depois das instruções serem definidas, porém antes  serem finalizadas                    |
+| save()                                             | Salva o arquivo                                                                                             |
+| forceCreateFolder($mode = 0777, $recursive = true) | Força a criação de um diretório ou arquivo                                                                  |
+
+
 ### Wiidoo\FileManager\Image
 Manipula a imagem facilitando a aplicação de filtros, redimensionamentos e multiplos salvamentos
 
 #### Estrutura
 
-Herdas metodos e propriedades de `Upload`.
+Herda metodos e propriedades de `Upload`.
 
 | Propriedade   | Valor                 | Descrição                                                                |
 |---------------|-----------------------|--------------------------------------------------------------------------|

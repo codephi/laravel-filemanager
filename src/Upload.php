@@ -266,7 +266,7 @@ class Upload extends FluentInterface
      * @param string $suffix
      * @return string
      */
-    public function getBaseDir($suffix = '')
+    protected function getBaseDir($suffix = '')
     {
         if ($this->useRelativePath)
             return $this->basePath . $suffix;
