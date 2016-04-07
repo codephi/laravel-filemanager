@@ -32,15 +32,15 @@ class Upload extends FluentInterface
 
     public $basePath = null;
 
-    protected $useRelativePath = true;
+    public $useRelativePath = true;
 
     public $forceCreateDir = true;
 
-    public $cache = [
+    protected $cache = [
         'prepare' => null
     ];
 
-    public $exec = false;
+    protected $exec = false;
 
     /**
      * Upload constructor.
