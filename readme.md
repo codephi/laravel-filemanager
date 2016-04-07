@@ -59,12 +59,13 @@ Manipula a imagem facilitando a aplicação de filtros, redimensionamentos e mul
 
 Herdas metodos e propriedades de `Upload`.
 
-Propiedade | Valor | Descrição 
-:-: | :-: | :-
-**$saveOriginal** | `null` | Se `true` gera salva o arquivo original no diretório declado em `dir()`
-**$mode** | `0777` | Ajusta permissão dos arquivos e diretórios gerados pela classe 
-**$quality** | `80` | Qualidade em que a imagem editada será salva. 
-**$size** | [array sizes](#sizes) | Listagem de tamanhos de imagem 
+| Propriedade   | Valor                 | Descrição                                                                |
+|---------------|-----------------------|--------------------------------------------------------------------------|
+| $saveOriginal | `null`                | Se `true` gera salva o arquivo original no diretório declado em `dir()`. |
+| $mode         | `0777`                | Ajusta permissão dos arquivos e diretórios gerados pela classe.          |
+| $quality      | `80`                  | Qualidade em que a imagem editada será salva.                            |
+| $size         | [array sizes](#sizes) | Listagem de tamanhos de imagem                                           |
+|               |                       |                                                                          |
 
 
  
