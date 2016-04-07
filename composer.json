@@ -1,6 +1,6 @@
 {
     "name": "wiidoo/file-manager",
-    "description": "My first Composer project",
+    "description": "File Manager uploaded to laravel",
     "license": "MIT",
     "keywords": ["file", "manager"],
     "authors": [
