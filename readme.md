@@ -110,6 +110,8 @@ Links para declaração do metodo `manySizes()` com filtros padrões da classe
  - Adicionar recursos para leitor de PDF
  - Adicionar recursos para leitores e geradores de .xls
 
+
+
 ## Adicional
 
 ##### $sizes
