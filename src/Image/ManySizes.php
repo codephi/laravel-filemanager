@@ -6,7 +6,7 @@
  * Time: 14:43
  */
 
-namespa;
+namespace Wiidoo\FileManager\Image;
 
 
 use Wiidoo\FileManager\Image;

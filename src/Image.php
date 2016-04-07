@@ -124,6 +124,12 @@ class Image extends Upload
         return $this;
     }
 
+    /**
+     * @param $sizes
+     * @param string $filter
+     * @param string $dir
+     * @return $this
+     */
     public function manySizes($sizes, $filter = 'Resize', $dir = '')
     {
         $this->cache['manySizes'][] =
@@ -136,6 +142,11 @@ class Image extends Upload
         return $this;
     }
 
+    /**
+     * @param $filters
+     * @param null $complement
+     * @return $this
+     */
     public function filter($filters, $complement = null)
     {
         $this->active['filter'] = true;

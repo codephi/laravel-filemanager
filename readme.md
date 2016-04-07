@@ -74,6 +74,7 @@ Manipula a imagem facilitando a aplicação de filtros, redimensionamentos e mul
 
 Herda metodos e propriedades de `Upload`.
 
+#### Propriedades
 | Propriedade   | Valor                 | Descrição                                                                |
 |---------------|-----------------------|--------------------------------------------------------------------------|
 | $saveOriginal | `null`                | Se `true` gera salva o arquivo original no diretório declado em `dir()`. |
@@ -82,8 +83,22 @@ Herda metodos e propriedades de `Upload`.
 | $size         | [array sizes](#sizes) | Listagem de tamanhos de imagem                                           |
 |               |                       |                                                                          |
 
+#### Métodos
+| Método                                            | Descrição                                                                                                                                                                                                                                                                                                |
+|---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| manySizes($sizes, $filter = 'Resize', $dir = '')  | Permite o multi-redimensionamento do arquivo, gerando arquivos com seus respectivos tamanhos em diretórios nominados.                                                                                                                                                                                    |
+| filter(Array|String $filters, $complement = null) | Define os filtros a serem usados na imagem. Pode ser passado um string com um filtro, ou um array com diversos.                                                                                                                                                                                          |
+| make($callback = null)                            | Permite a manipulação do arquivo após ser definido como um `Intervention\Image`.                                                                                                                                                                                                                         |
+| image($key = false)                               | Pega o retorno de uma imagem gerada.                                                                                                                                                                                                                                                                     |
+| contentType($type = null)                         | Define o contentType da página baseado no mimeType do arquivo.                                                                                                                                                                                                                                           |
+| encode()                                          | Retorna o arquivo pronto para ser exibido.                                                                                                                                                                                                                                                               |
+| data($type = 'all')                               | Retorna todos os dados disponíveis do arquivo manipulado e suas ramificações. Recebe dois tipos de instrução `all` para retornar todas as informações disponíveis e `simple` para retornar as principais informações sobre os arquivos gerados, como nome, diretório relativo e caminho real do arquivo. |
+| success()                                         | Para uso com Ajax, retorna um array dois ponteiros: `success:true` e `data('simple')`                                                                                                                                                                                                                    |
 
- 
+## Wiidoo\FileManager\Image\ManySizes
+Links para declaração do metodo `manySizes()` com filtros padrões da classe
+
+### Estrutura
 
 ## A fazer
  - Adicionar recursos para leitor de PDF
