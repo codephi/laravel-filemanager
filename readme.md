@@ -99,6 +99,13 @@ Links para declaração do metodo `manySizes()` com filtros padrões da classe
 
 ### Estrutura
 
+####Métodos
+| Métodos                           | Descrição                                        |
+|-----------------------------------|--------------------------------------------------|
+| `resize($sizes, $dir = 'resize')` | Redimensiona imagens aplicando o filtro `Resize` |
+| `fit($sizes, $dir = 'fit')`       | Redimensiona imagens aplicando o filtro `Fit`    |
+| `canvas($sizes, $dir = 'canvas')` | Redimensiona imagens aplicando o filtro `Canvas` |
+
 ## A fazer
  - Adicionar recursos para leitor de PDF
  - Adicionar recursos para leitores e geradores de .xls
