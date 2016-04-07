@@ -37,13 +37,13 @@ return [
 ];
 ```
 
-## Classes
-### Wiidoo\FileManager\Upload
+
+## Wiidoo\FileManager\Upload
 Tem como foco resumir o trabalho de mover e renomear arquivos carregados a partir de Illuminate\Http\Request. É usado como base para outras classes dessa biblioteca.
 
-#### Estrutura
+### Estrutura
 
-##### Propriedades
+#### Propriedades
 |    Propiedade    |           Valor           |                                                                                          Descrição                                                                                          |
 |:----------------:|:-------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 |       $name      |           `null`          | Nome do arquivo                                                                                                                                                                             |
@@ -53,7 +53,7 @@ Tem como foco resumir o trabalho de mover e renomear arquivos carregados a parti
 | $useRelativePath | `true`                    | Usar caminhos relativos no metodo de seleção de diretório `dir()`                                                                                                                           |
 | $forceCreateDir  | `true`                    | Força a criação de diretórios declarados caso eles não existão                                                                                                                              |
 
-##### Métodos
+#### Métodos
 | Método                                             | Descrição                                                                                                   |
 |----------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
 | file($key = null, $default = null)                 | Define o arquivo de entrada.                                                                                |
@@ -67,10 +67,10 @@ Tem como foco resumir o trabalho de mover e renomear arquivos carregados a parti
 | forceCreateFolder($mode = 0777, $recursive = true) | Força a criação de um diretório ou arquivo                                                                  |
 
 
-### Wiidoo\FileManager\Image
+## Wiidoo\FileManager\Image
 Manipula a imagem facilitando a aplicação de filtros, redimensionamentos e multiplos salvamentos
 
-#### Estrutura
+### Estrutura
 
 Herda metodos e propriedades de `Upload`.
 
@@ -85,7 +85,7 @@ Herda metodos e propriedades de `Upload`.
 
  
 
-### A fazer
+## A fazer
  - Adicionar recursos para leitor de PDF
  - Adicionar recursos para leitores e geradores de .xls
 
