@@ -52,6 +52,10 @@ class Upload extends FluentInterface
 
         parent::mergeConfig('wiidoo.filemanager.upload');
 
+        if(!$this->basePath){
+            $this->basePath = storage_path('uploads');
+        }
+
         $this->request = $request;
     }
 
