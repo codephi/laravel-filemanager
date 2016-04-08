@@ -1,6 +1,6 @@
 # Laravel File Manager Tutorial
 
-Após as [configurações inicias da biblioteca wiidoo/file-manager](#), vamos criar um controller de testa para essa biblioteca.
+Após as [configurações inicias da biblioteca wiidoo/file-manager](readme.md#instalação), vamos criar um controller de testa para essa biblioteca.
 
 
 Partindo de que você já tem as views necessárias para esse teste ou usará o Postman ou outro tipo de aplicação de teste, crie um `UploadController.php` como no modelo:
