@@ -87,3 +87,109 @@ A biblioteca instanciada aqui, `ManySizes`, contém links para filtros basicos d
  - **Resize** - Redimensionamento simples da image.
  - **Fit** - Redimensiona a imagem mantendo a proporção e fatia as sobras.
  - **Canvas** - Redimensiona a imagem mantendo a proporção e adionando um fundo, por padrão branco (`#FFFFFF`) as sobras. 
+
+#### Aplicando links
+```php
+->resize(['thumb', 'medium', 'large']);
+->fit(['thumb', 'medium', 'large']);
+->canvas(['thumb', 'medium', 'large']);
+```
+
+### Retorno
+Vamos retornar os dados para manipulação.
+
+Após o `->save` podemos trabalhar com a biblioteca instanciada para manipular os dados gerados.
+
+```php
+$result = $foto->file('foto')
+->dir('foto')
+->name('teste')
+->resize(['thumb', 'medium', 'large']);
+->save();
+
+echo $result->data('simple')->realPath; // /home/user/public_html/site/storage/uploads/foto/teste.jpg
+ 
+echo $result->success(); // ['success' => true, 'data' => ...]
+
+foreach($result->data()['variations'] as $item){
+    echo $item['dir']; // foto/resizes/thumb/teste.jpg, foto/resizes/medium/teste.jpg, foto/resizes/large/teste.jpg
+}
+```
+
+## Filtros Customizados
+
+```php
+<?php
+
+namespace Wiidoo\FileManager\Image\Filters;
+
+use Intervention\Image\Filters\FilterInterface;
+
+class Crazy implements FilterInterface
+{
+
+    public $contrast = 65;
+
+    public $colorize;
+
+    public function __construct($contrast = false)
+    {
+        if ($contrast) {
+            $this->contrast = $contrast;
+        }
+
+        $this->colorize = [random_int(0, 100), random_int(0, 100), random_int(0, 100)];
+    }
+
+
+    public function applyFilter(\Intervention\Image\Image $image)
+    {
+        $image->contrast($this->contrast);;
+        $image->colorize($this->colorize[0], $this->colorize[1], $this->colorize[2]);
+
+        return $image;
+    }
+}
+```
+
+Esse é um exemplo padrão de um filtro. Para que ele seja encontrado pela biblioteca, a única coisa que você deve fazer é usar o **namespace** `Wiidoo\FileManager\Image\Filters`.
+
+Mais detalhes sobre filtros, consulte a documentação do [intervention/image/filter](http://image.intervention.io/api/filter).
+
+### Aplicando filtros
+Existem duas maneiras de aplicar filtros. Usando o metodo `filter` ou chamando pelo próprio nome.
+
+```php
+->filter('Crazy', [100]) // Filtro Crazy passando o valor 100 para $contrast;
+
+->Crazy(87) // Filtro Crazy passando o valor 87 para $contrast;
+
+->filter(['Crazy' => 52, 'Resize' => [800, 600]]) // Filtro Crazy passando o valor 52 para $contrast, filtro Resize passando 800 para $widht e 600 para $heigth
+```
+
+## Editando e sobrescrevendo arquivos locais
+Você pode editar arquivos direto do servidor, para isso passe o caminho relativo ou real no metodo file. (Caso o useDirBase seja falso, você devera passar o caminho completo do arquivo)
+
+### ATENÇÂO
+Nesse modo o saveOriginal() não pode ser usado.
+
+```php
+->file('foto/image.jpg')
+->file('/home/user/images/image.jpg')
+->Crazy()
+->dir('fotos_do_servidor')
+->save();
+```
+Nesse exemplo o arquivo será editado salvando em um novo diretorio, porém nesse caso não é possivel usar o saveOriginal(), pois você estaria sobrescrevendo o arquivo ou fazendo uma copia do do original para o mesmo lugar, forçando a criação de um outro com um nome direfente.
+
+Para sobrescrever o arquivo use o metodo overwrite()
+
+```php
+//...
+->overwrite()
+->save();
+```
+
+## Adicionais
+### name(string $name, bool $ext = true)
+Caso $ext seja TRUE o nome herda a extensão original do arquivo.
