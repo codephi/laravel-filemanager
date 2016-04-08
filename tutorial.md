@@ -40,7 +40,7 @@ $result = $foto->file('foto/image.jpg');
 $result = $foto->file('/home/user/public_html/site/resouces/assets/images/image.jpg');
 ```
 
-### Save() basico
+### Save basico
 Vamos simplesmente salval o arquivo carregado sem nenhuma edição.
 
 ```php
@@ -71,39 +71,19 @@ Use o atributo de retorno no callback, no caso $image e manipule direto usando o
 ->save();
 ```
 
-## resize(string|array $size, bool $constrain)
-Usando o resize do Image e não direto do make você poderá usar as opções salva as opções de multiplos salvamentos.
+### manySizes($sizes, $filter, $dir)
+Com o método `manySizes` você será capaz de salvar sua imagem em multiplos arquivos de tamanhos e efeitos diversos.
 
-Nesse caso, as imagens serão salvas em diretórios com o nome do seu respectivo tamanho. Exemplo ...uploads/photos/thumb/image.jpg,  ...uploads/photos/p/image.jpg, ...uploads/photos/m/image.jpg...
-
-```php
-->resize(['p', 'm'])
-->save();
-```
-
-Você pode preferir manter a imagem original, para isso user o metodo saveOriginal(), ela será salva na raiz do diretório setado no metodo dir().
+Esse método trabalha aplicando todos seus filtros a diversos tamanhos de arquivos, passados em parametro.
 
 ```php
-->resize(['thumb', 'p', 'm'])
-->saveOriginal()
-->save();
+->manySizes(['thumb', 'medium', 'large'], 'Resize', 'resize');
+->manySizes(['thumb', 'medium', 'large'], 'Fit', 'fit');
 ```
 
-Você pode aplicar essas instruções manipulando o intervention/image.
+### Links para manySizes
+A biblioteca instanciada aqui, `ManySizes`, contém links para filtros basicos de redimensionamento. Eles são
 
-```php
-->make(function ($image) {
-    $image->resize(200, 200);
-
-    /*
-     * Se não declarar $dir, a imagem modificada será salva no diretóio
-     * 'modified', mesmo que o metodo saveOriginal() não seja declarado.
-     */
-    $image->dir = 'test';
-
-    return $image;
-})
-->saveOriginal()
-->save();
-
-```
+ - **Resize** - Redimensionamento simples da image.
+ - **Fit** - Redimensiona a imagem mantendo a proporção e fatia as sobras.
+ - **Canvas** - Redimensiona a imagem mantendo a proporção e adionando um fundo, por padrão branco (`#FFFFFF`) as sobras. 
